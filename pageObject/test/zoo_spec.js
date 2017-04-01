@@ -32,7 +32,11 @@ var home_page=require('../page/home_page.js');
       home_page.enterFieldValue("Alok from CC");
       var getHomePageText=home_page.getDynamicText();
       expect(getHomePageText).toBe("Alok from CC"); 
-      home_page.clickContinue();
+      var animal_page=home_page.clickContinue();
+
+      animal_page.selectAnimal(2);
+      animal_page.clickContinue();
+
   });
 });
 

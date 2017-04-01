@@ -1,3 +1,5 @@
+require ('../page/animal_page.js');
+
 var home_page=function()
 {
         this.enterFieldValue=function(value)
@@ -13,6 +15,9 @@ var home_page=function()
         this.clickContinue=function()
         {
             element(by.buttonText('CONTINUE')).click();
+            //return next page refrence
+
+            return require('./animal_page.js');
         };
 };
 
