@@ -35,7 +35,12 @@ var home_page=require('../page/home_page.js');
       var animal_page=home_page.clickContinue();
 
       animal_page.selectAnimal(2);
-      animal_page.clickContinue();
+      var confirm_page=animal_page.clickContinue();
+
+      expect(confirm_page.getTitle()).toBe('Thank you'); 
+
+
+
 
   });
 });
