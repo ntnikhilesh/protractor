@@ -2,9 +2,13 @@
 
 describe ("Adopt an animal on the zoo test site",function(){
 
+  beforeEach(function(){
+    browser.get("http://www.thetestroom.com/jswebapp/"); 
+  })
+
   it("should able to correct page", function()
   {
-    browser.get("http://www.thetestroom.com/jswebapp/"); 
+   // browser.get("http://www.thetestroom.com/jswebapp/"); 
 
     //using expect() we can perform validation
 
@@ -16,7 +20,7 @@ describe ("Adopt an animal on the zoo test site",function(){
 
   it("should able to correct text", function()
   {
-    browser.get("http://www.thetestroom.com/jswebapp/"); 
+    //browser.get("http://www.thetestroom.com/jswebapp/"); 
 
     //using expect() we can perform validation
 
@@ -31,7 +35,7 @@ describe ("Adopt an animal on the zoo test site",function(){
 
   it("should able to correct number of item in dropdown", function()
   {
-    browser.get("http://www.thetestroom.com/jswebapp/"); 
+    //browser.get("http://www.thetestroom.com/jswebapp/"); 
 
     //using expect() we can perform validation
 
@@ -54,7 +58,7 @@ describe ("Adopt an animal on the zoo test site",function(){
 
   it("should check user is on Thank you page ", function()
   {
-    browser.get("http://www.thetestroom.com/jswebapp/"); 
+    //browser.get("http://www.thetestroom.com/jswebapp/"); 
 
     //using expect() we can perform validation
 
