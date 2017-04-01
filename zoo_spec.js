@@ -1,13 +1,19 @@
-// //describe block is used for testing of contens and it block realy test them
+// //describe block is used for testing of contents and it block realy test them
 
-describe("Adopt an animal on the zoo test site", function () {
+describe("Adopt an animal on the zoo test site", function () 
+{
 
-  beforeEach(function () {
+  beforeEach(function () 
+  {
     browser.get("http://www.thetestroom.com/jswebapp/");
   })
 
-  it("should able to correct page", function () {
-   
+  afterEach(function () {
+    console.log("After method executed");
+  })
+
+  it("should able to correct page", function () 
+  {
 
     //using expect() we can perform validation
 
@@ -17,32 +23,38 @@ describe("Adopt an animal on the zoo test site", function () {
 
   });
 
-  describe("should generate correct text", function () {
+  describe("should generate correct text", function () 
+  {
 
     var textMessage;
-    beforeEach(function () {
+    beforeEach(function () 
+    {
       textMessage = "I will not subscribe";
     });
 
 
 
-    it("should check correct text", function () {
+    it("should check correct text", function () 
+    {
 
 
 
       element(by.model("person.name")).sendKeys(textMessage);
-      element(by.binding("person.name")).getText().then(function (text) {
+      element(by.binding("person.name")).getText().then(function (text) 
+      {
         expect(text).toEqual("I will not subscribe");
       });
 
     });
 
-    // it("should check incorrect text", function () {
+    // it("should check incorrect text", function () 
+    //{
 
 
 
     //   element(by.model("person.name")).sendKeys(textMessage);
-    //   element(by.binding("person.name")).getText().then(function (text) {
+    //   element(by.binding("person.name")).getText().then(function (text) 
+    //{
     //     expect(text).toNotEqual("I will not subscribe");
     //   });
 
@@ -50,48 +62,53 @@ describe("Adopt an animal on the zoo test site", function () {
 
 
 
-describe("should able to correct number of item in dropdown", function () {
+  describe("should able to correct number of item in dropdown", function () 
+  {
 
-  var lengthOfItems
-  beforeEach(function () {
-    lengthOfItems = 4;
-  });
+    var lengthOfItems
+    beforeEach(function () 
+    {
+      lengthOfItems = 4;
+    });
 
-  it("should check number of items", function () {
+    it("should check number of items", function () 
+    {
 
 
-    element(by.buttonText("CONTINUE")).click();
-    element(by.model("animal")).$("[value='2']").click();
+      element(by.buttonText("CONTINUE")).click();
+      element(by.model("animal")).$("[value='2']").click();
 
-    element.all(by.css(".ng-pristine option")).then(function (items) {
-      expect(items.length).toBe(lengthOfItems);
-      expect(items[1].getText()).toBe("George the Turtle");
+      element.all(by.css(".ng-pristine option")).then(function (items) 
+      {
+        expect(items.length).toBe(lengthOfItems);
+        expect(items[1].getText()).toBe("George the Turtle");
+      })
+
+
+      element(by.buttonText("CONTINUE")).click();
     })
 
 
+
+
+
+
+  });
+
+
+  it("should check user is on Thank you page ", function () 
+  {
+    //browser.get("http://www.thetestroom.com/jswebapp/"); 
+
+    //using expect() we can perform validation
+
     element(by.buttonText("CONTINUE")).click();
-  })
+    element(by.buttonText("CONTINUE")).click();
+    expect(browser.getCurrentUrl()).toContain("confirm");
 
 
 
-
-
-
-});
-
-
-it("should check user is on Thank you page ", function () {
-  //browser.get("http://www.thetestroom.com/jswebapp/"); 
-
-  //using expect() we can perform validation
-
-  element(by.buttonText("CONTINUE")).click();
-  element(by.buttonText("CONTINUE")).click();
-  expect(browser.getCurrentUrl()).toContain("confirm");
-
-
-
-});
+  });
 });
 
 
